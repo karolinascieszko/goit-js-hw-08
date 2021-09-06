@@ -1,3 +1,4 @@
+'use strict';
 import _default from '../../node_modules/simplelightbox/dist/simple-lightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 // Add imports above this line
