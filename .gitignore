@@ -121,5 +121,3 @@ typings/
 # TernJS port file
 
 .tern-port
-
-dist node_modules
