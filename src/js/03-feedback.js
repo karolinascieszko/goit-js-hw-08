@@ -1,4 +1,4 @@
-import throttle from 'lodash.throttle';
+import throttle from 'lodash/throttle';
 
 const qs = selector => document.querySelector(selector);
 const qsa = selector => document.querySelectorAll(selector);
