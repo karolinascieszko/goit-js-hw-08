@@ -1,32 +1,31 @@
-# Parcel boilerplate
+# parcel-project-template
 
-## Скрытые файлы
+## Zalezności
 
-Включите отображение скрытых файлов и папок в проводнике своей операционной системы, иначе вы не
-сможете выбрать и скопировать себе файлы настроек проекта, имена которых начинаются с точки.
+Na komputerze musi być zainstalowana LTS-wersja Node.js.
 
-## Зависимости
+## Przed rozpoczęciem pracy
 
-На компьютере должена быть установлена LTS-версия [Node.js](https://nodejs.org/en/) со всеми
-дополнительными инструментами кроме **Chocolatey** - его ставить не нужно.
+Jeden raz na projekt zainstalować wszystkie zalezności.
 
-## Перед началом работы
-
-Один раз на проект установить все зависимости.
-
-```shell
 npm ci
-```
 
-### Разработка
+## Praca
 
-Запустить режим разработки.
+Włączyć tryp pracy.
 
-```shell
 npm run dev
-```
+W przeglądarce przejść na http://localhost:1234.
 
-Во вкладке браузера перейти по адресу [http://localhost:1234](http://localhost:1234).
+### Deploy
+
+Kod będzie automatycznie się zbierać i robić deploy aktualnej wersji projektu na GitHub Pages, w gałąź gh-pages, za kazdym razem jeśli zostaną wprowadzone zmiany w main. Na przykład, po bezpośrenim push lub po przyjęciu pull-request. Aby to działało musimy w pliku package.json zmienić pole homepage i skrypt build, zmieniając nazwe_uzytkownika i nazwe_repozytorium na swoje.
+
+"homepage": "https://nazwa_uzytkownika.github.io/nazwa_repozytorium",
+"scripts": {
+  "build": "parcel build src/*.html --public-url /nazwa_repozytorium/"
+},
+Po jakimś czasie stronę mozna będzie zobaczyć na zywo pod adresem który jest wpisany w poprawione właściwości homepage, na przykład https://goitacademy.github.io/parcel-project-template.
 
 ### Деплой
 
@@ -49,10 +48,7 @@ npm run dev
 свойстве `homepage`, например
 [https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
 
-## Файлы и папки
+## Pliki i folderzy
 
-- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
-  `src/sass/main.scss`
-- Изображения добавляйте в папку `src/images`, заранее оптимизировав их. Сборщик просто копирует
-  используемые изображения чтобы не нагружать систему оптимизацией картинок, так как на слабых
-  компьютерах это может занять много времени.
+Wszystkie partials plików styłów powinny być w folderze src/sass i importować się w src/sass/main.scss
+Zdjęcia dodawajcie w folder src/images, przed tym zoptymizujcie te zdjęcia które dodajecie. Program po prostu kopiuje wykorzystane zdjęcia aby system nie musiał optymizować je, bo na słabych komputerach to moze zająć duzo czasu.
