@@ -15,6 +15,7 @@ npm ci
 Włączyć tryp pracy.
 
 npm run dev
+
 W przeglądarce przejść na http://localhost:1234.
 
 ### Deploy
