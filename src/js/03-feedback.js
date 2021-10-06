@@ -20,19 +20,24 @@ const updateOutput = () => {
     formEmail.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).email;
     formMessage.value = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)).message;
   } catch {
-    console.log('LocalStorage is empty');
+    console.log('Local storage is empty');
   }
 };
 
 const handleSubmit = event => {
-  event.preventDefault();
-  const {
-    elements: { email, message },
-  } = event.currentTarget;
-  console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
-  form.reset();
-  event.currentTarget.reset();
-  localStorage.clear();
+  if (formEmail.value !== '' || formMessage.value !== '') {
+    event.preventDefault();
+    const {
+      elements: { email, message },
+    } = event.currentTarget;
+    console.log(JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY)));
+    form.reset();
+    event.currentTarget.reset();
+    localStorage.clear();
+  } else {
+    event.preventDefault();
+    alert('Please enter data!');
+  }
 };
 
 updateOutput();
